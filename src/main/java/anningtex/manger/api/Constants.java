@@ -16,6 +16,7 @@ public class Constants {
     public final static String TWO_VIEW_PATH = "/fxml/firstTwo.fxml";
     public final static String OTHER_VIEW_PATH = "/fxml/TwoOne.fxml";
     public final static String IMAGE_SIZE_VIEW_PATH = "/fxml/firstImageSize.fxml";
+    public final static String IMAGE_SIZE_VIEW_PATH_TWO = "/fxml/firstImageSizeTwo.fxml";
 
     //---------------------------------Two--------------------------------------------
     public final static String TWO_MENU_VIEW_PATH = "/fxml/TwoMenuHome.fxml";

@@ -239,7 +239,10 @@ public class FirstTwoController implements Initializable {
     private void launchImageSizeWindow(String titleName, String picUrl) {
         try {
             Stage stage = new Stage();
-            Parent root = FXMLLoader.load(getClass().getResource(Constants.IMAGE_SIZE_VIEW_PATH));
+            //第一种
+//            Parent root = FXMLLoader.load(getClass().getResource(Constants.IMAGE_SIZE_VIEW_PATH));
+            //第二种
+            Parent root = FXMLLoader.load(getClass().getResource(Constants.IMAGE_SIZE_VIEW_PATH_TWO));
             Scene scene = new Scene(root);
             stage.setTitle(titleName);
             RxBus.getInstance().send(picUrl);

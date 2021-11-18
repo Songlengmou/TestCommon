@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="797.0"
+            prefWidth="980.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1"
+            fx:controller="anningtex.controller.TwoOneController">
+    <children>
+        <ChoiceBox fx:id="cbList" layoutX="85.0" layoutY="43.0" prefHeight="32.0" prefWidth="143.0"/>
+        <Text layoutX="6.0" layoutY="68.0" strokeType="OUTSIDE" strokeWidth="0.0" text="品名：" textAlignment="RIGHT"
+              wrappingWidth="79.0">
+            <font>
+                <Font size="24.0"/>
+            </font>
+        </Text>
+        <TextField fx:id="tfOrderNo" layoutX="236.0" layoutY="43.0" prefHeight="32.0" prefWidth="143.0"
+                   promptText="布产单号" text="AFX210731A">
+            <font>
+                <Font size="14.0"/>
+            </font>
+        </TextField>
+        <DatePicker fx:id="startData" layoutX="389.0" layoutY="43.0" prefHeight="32.0" prefWidth="143.0"
+                    promptText="start"/>
+        <DatePicker fx:id="endData" layoutX="541.0" layoutY="43.0" prefHeight="32.0" prefWidth="186.0"
+                    promptText="end"/>
+        <ListView fx:id="lvOrderList" layoutX="6.0" layoutY="97.0" prefHeight="493.0" prefWidth="790.0"
+                  AnchorPane.bottomAnchor="10.0" AnchorPane.leftAnchor="10.0" AnchorPane.rightAnchor="10.0"
+                  AnchorPane.topAnchor="97.0"/>
+        <Button fx:id="btnQuery" layoutX="735.0" layoutY="43.0" mnemonicParsing="false" onAction="#queryData"
+                prefHeight="32.0" prefWidth="65.0" text="查询"/>
+    </children>
+</AnchorPane>

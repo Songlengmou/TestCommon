@@ -1,10 +1,9 @@
 package anningtex.controller;
 
 import anningtex.manger.http.RxBus;
+import javafx.beans.property.SimpleDoubleProperty;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
-import javafx.geometry.Point2D;
-import javafx.geometry.Rectangle2D;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.input.ScrollEvent;
@@ -14,12 +13,14 @@ import java.util.ResourceBundle;
 
 /**
  * @Author Song
- * @Desc:图片的鼠标滚动缩放 第一种
+ * @Desc:图片的鼠标滚动缩放 第二种 (建议使用这种)
  * @Date：2021-10-29
  */
-public class FirstImageSizeOneController implements Initializable {
+public class FirstImageSizeTwoController implements Initializable {
     @FXML
     private ImageView imageView;
+
+    private double tOffX = 0, tOffY = 0;
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
@@ -43,23 +44,17 @@ public class FirstImageSizeOneController implements Initializable {
                 if (newWidth <= width || newWidth > 509 * width) {
                     return;
                 }
-                Point2D eventPoint = new Point2D(event.getSceneX(), event.getSceneY());
-                Point2D imagePoint = imageView.localToScene(new Point2D(imageView.getX(), imageView.getY()));
-                Rectangle2D imageRect = new Rectangle2D(imagePoint.getX(), imagePoint.getY(), imageView.getFitWidth(), imageView.getFitHeight());
-                Point2D ratePoint;
-                Point2D eventPointDistance;
-                if (newWidth > 980 / 4 * width && imageRect.contains(eventPoint)) {
-                    ratePoint = eventPoint.subtract(imagePoint);
-                    ratePoint = new Point2D(ratePoint.getX() / imageView.getFitWidth(), ratePoint.getY() / imageView.getFitHeight());
-                    eventPointDistance = imageView.sceneToLocal(eventPoint);
-                } else {
-                    ratePoint = new Point2D(0.5, 0.5);
-                    eventPointDistance = new Point2D(509 / 2, 390 / 2);
-                }
-                imageView.setX(eventPointDistance.getX() - newWidth * ratePoint.getX());
-                imageView.setY(eventPointDistance.getY() - newHeight * ratePoint.getY());
                 imageView.setFitWidth(newWidth);
                 imageView.setFitHeight(newHeight);
+            });
+
+            imageView.setOnMousePressed(event -> {
+                tOffX = event.getSceneX() - imageView.getX();
+                tOffY = event.getSceneY() - imageView.getY();
+            });
+            imageView.setOnMouseDragged(event -> {
+                imageView.xProperty().bind(new SimpleDoubleProperty(event.getSceneX() - tOffX));
+                imageView.yProperty().bind(new SimpleDoubleProperty(event.getSceneY() - tOffY));
             });
         });
     }

@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.control.TreeView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+
+<AnchorPane fx:id="main" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity"
+            prefHeight="800.0" prefWidth="1280.0" xmlns="http://javafx.com/javafx/17"
+            xmlns:fx="http://javafx.com/fxml/1" fx:controller="anningtex.controller.TwoMenuController">
+    <children>
+        <BorderPane prefHeight="800.0" prefWidth="1280.0">
+            <left>
+                <TreeView fx:id="tvMainLeft" onMouseClicked="#mainTreeViewClick" prefHeight="360.0" prefWidth="126.0"
+                          BorderPane.alignment="TOP_LEFT"/>
+            </left>
+            <center>
+                <ScrollPane prefHeight="600.0" BorderPane.alignment="CENTER">
+                    <content>
+                        <AnchorPane fx:id="mainPaneUnderScroll" maxHeight="-Infinity" maxWidth="-Infinity"
+                                    prefHeight="784.0" prefWidth="1151.0"/>
+                    </content>
+                </ScrollPane>
+            </center>
+        </BorderPane>
+    </children>
+</AnchorPane>

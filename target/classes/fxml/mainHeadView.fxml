@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.layout.VBox?>
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="800.0"
+            prefWidth="1280.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1"
+            fx:controller="anningtex.controller.TwoHeadController">
+    <children>
+        <Text layoutX="481.0" layoutY="127.0" strokeType="OUTSIDE" strokeWidth="0.0" text="HEAD界面"
+              textAlignment="CENTER" wrappingWidth="317.240234375">
+            <font>
+                <Font name="System Bold" size="29.0"/>
+            </font>
+        </Text>
+
+        <StackPane minHeight="635.0" minWidth="550.0">
+            <children>
+                <VBox alignment="CENTER" spacing="50.0">
+                    <children>
+                        <ImageView fx:id="dynamic" fitWidth="350.0"/>
+                    </children>
+                </VBox>
+            </children>
+        </StackPane>
+    </children>
+</AnchorPane>
